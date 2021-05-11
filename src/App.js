@@ -12,7 +12,11 @@ function App() {
     const fetchPosts = async() =>{
       setLoading(true);
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      setPosts(res.data);
+      setLoading(false);
+
     }
+    fetchPosts();
   })
   return (
     <div className="container">
